@@ -27,8 +27,8 @@ define( 'CLICKY_PLUGIN_VERSION', '1.8' );
 define( 'CLICKY_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CLICKY_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 
-if ( file_exists( CLICKY_PLUGIN_DIR_PATH . 'vendor/autoload_52.php' ) ) {
-	require CLICKY_PLUGIN_DIR_PATH . 'vendor/autoload_52.php';
+if ( file_exists( CLICKY_PLUGIN_DIR_PATH . 'vendor/autoload.php' ) ) {
+	require_once CLICKY_PLUGIN_DIR_PATH . 'vendor/autoload.php';
 }
 
 /**
