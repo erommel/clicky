@@ -9,13 +9,6 @@ cache:
     # Cache directory for more recent Composer versions.
     - $HOME/.cache/composer/files
 
-branches:
-  only:
-    - master
-    - develop
-    - /^release\/\d+\.\d+(\.\d+)?(-\S*)?$/
-    - /^hotfix\/\d+\.\d+(\.\d+)?(-\S*)?$/
-
 matrix:
   fast_finish: true
   include:
