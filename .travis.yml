@@ -42,9 +42,11 @@ before_install:
 
 install:
 - |
-  if [[ "$CODE_CLIMATE" == "1" || "$PHPCS" == "1" || ${TRAVIS_PHP_VERSION:0:3} > "7.1" ]]; then
+  if [[ "$CODE_CLIMATE" == "1" || "$PHPCS" == "1" ]]; then
     composer install --no-interaction
-  else
+  elif [[ ${TRAVIS_PHP_VERSION:0:3} > "7.1" && ${TRAVIS_PHP_VERSION:0:3} != "nightly" ]]; then
+    composer install --no-interaction
+  elif [[ ${TRAVIS_PHP_VERSION:0:3} != "nightly" ]]; then
     composer install --no-dev --no-interaction
   fi
 
