@@ -44,14 +44,17 @@
     "fix-cs": [
       "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
     ],
+    "test": [
+      "@php ./vendor/phpunit/phpunit/phpunit"
+    ],
     "post-install-cmd": [
       "xrstf\\Composer52\\Generator::onPostInstallCmd"
     ],
     "post-update-cmd": [
-      "xrstf\\Composer52\\Generator::onPostInstallCmd"
+      "@post-install-cmd"
     ],
     "post-autoload-dump": [
-      "xrstf\\Composer52\\Generator::onPostInstallCmd"
+      "@post-install-cmd"
     ]
   }
 }
